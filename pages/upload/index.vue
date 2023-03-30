@@ -1,5 +1,5 @@
 <template>
-    <!---Error mesaj gorsenmir-->
+    
         <UploadError :errorType="errorType"/>
 
         <UploadLayout>
