@@ -24,6 +24,6 @@
 </template>
 
 <script setup>
-// const { $generalStore } = useNuxtApp()
+const { $generalStore } = useNuxtApp()
 let isRegister = ref(true)
 </script>
