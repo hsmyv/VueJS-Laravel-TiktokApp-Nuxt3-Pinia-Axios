@@ -33,7 +33,7 @@
             </div>
             <div class="bg-black bg-opacity-70 lg:min-w-[480px]">
                 <video ref="video" loop muted class="h-screen mx-auto"
-                    src="video.mp4" />
+                    src="/video.mp4" />
             </div>
 
         </div>

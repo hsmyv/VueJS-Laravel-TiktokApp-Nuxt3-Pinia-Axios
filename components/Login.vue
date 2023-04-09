@@ -5,8 +5,7 @@
 
     <div class="px-6 pb-2">
         <TextInput placeholder="Email address" v-model:input="email" inputType="email" :autoFocus="true"
-        :error="errors && errors.email ? errors.email[0] : ''" />
-    
+            :error="errors && errors.email ? errors.email[0] : ''" />
     </div>
 
     <div class="px-6 pb-2">
