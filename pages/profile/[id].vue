@@ -1,15 +1,14 @@
 <template>
     <MainLayout>
-        <div
+        <div v-if="$profileStore.name"
             class="pt-[90px] 2xl:pl-[185px] lg:pl-[160px] lg:pr-0 pr-2 w-[calc(100%-90px)] max-w-[1800px] 2xl:mx-auto">
             <div class="flex w-[calc(100vw-230px)]">
-                <img class="max-w-[120px] rounded-full" src="https://picsum.photos/id/8/300/320">
+                <img class="max-w-[120px] rounded-full" :src="$profileStore.image">
                 <div class="ml-5 w-full">
                     <div class="text-[30px] font-bold truncate">
-                        User name
-
+                        {{ $generalStore.allLowerCaseNoCaps($profileStore.name) }}
                     </div>
-                    <div class="text-[18px] truncate">User name</div>
+                    <div class="text-[18px] truncate">{{ $profileStore.name }}</div>
                     <button v-if="$profileStore.id === $userStore.id" @click="$generalStore.isEditProfileOpen = true"
                         class="flex item-center rounded-md py-1.5 px-3.5 mt-3 text-[15px] font-semibold border hover:bg-gray-100">
                         <Icon class="mt-0.5 mr-1" name="mdi:pencil" size="18" />
@@ -33,13 +32,13 @@
                     <span class="text-gray-500 font-light text-[15px] pl-1.5">Followers</span>
                 </div>
                 <div class="mr-4">
-                    <span class="font-bold">66</span>
+                    <span class="font-bold">{{ allLikes }}</span>
                     <span class="text-gray-500 font-light text-[15px] pl-1.5">Likes</span>
                 </div>
             </div>
 
             <div class="pt-4 mr-4 text-gray-500 font-light text-[15px] pl-1.5 max-w-[500px]">
-                This is the bio section
+                {{ $profileStore.bio }}
             </div>
 
             <div class="w-full flex items-center pt-4 border-b">
@@ -67,7 +66,7 @@ const { posts, allLikes } = storeToRefs($profileStore)
 const route = useRoute()
 let show = ref(false)
 
-
+definePageMeta({ middleware: 'auth' })
 
 onMounted(async () => {
     try {

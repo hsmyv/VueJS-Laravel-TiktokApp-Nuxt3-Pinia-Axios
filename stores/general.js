@@ -87,6 +87,6 @@ export const useGeneralStore = defineStore('general', {
       let res = await $axios.get('/api/home')
       this.posts = res.data
     }
-  },
+  },  
   persist: true,
 })
