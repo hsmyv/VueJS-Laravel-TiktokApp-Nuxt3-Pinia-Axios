@@ -29,8 +29,8 @@
                 <Icon class="animate-spin ml-1" name="mingcute:loading-line" size="100" color="#FFFFFF" />
             </div>
             <div class="bg-black bg-opacity-70 lg:min-w-[480px]">
-                <video v-if="$generalStore.selectedPost.video" ref="video" loop muted class="h-screen mx-auto"
-                    :src="$generalStore.selectedPost.video" />
+                <video ref="video" loop muted class="h-screen mx-auto"
+                    src="video.mp4" />
             </div>
 
         </div>
