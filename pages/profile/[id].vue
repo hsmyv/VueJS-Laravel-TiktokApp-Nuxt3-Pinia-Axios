@@ -70,7 +70,7 @@ definePageMeta({ middleware: 'auth' })
 
 onMounted(async () => {
     try {
-        await $profileStore.getProfile(route.params.id)
+        await $profileStore.getProfile(4)
     } catch (error) {
         console.log(error)
     }
